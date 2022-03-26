@@ -1619,7 +1619,7 @@ const friend_battle = (() => {
     );
 
     publicly_announce_matching(
-      `Opened a room ${room_id} requested by${session_token}.
+      `Opened a room ${sha256_first7(room_id)} requested by${sha256_first7(session_token)}.
       The current waiting list for the friend match is [${[...person_to_half_occupied_room.entries()].map(([tok, room]) => `${sha256_first7(tok)}: ${sha256_first7(room)}`)
       }]`, is_staging
     )
